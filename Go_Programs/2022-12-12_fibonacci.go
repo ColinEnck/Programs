@@ -3,12 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	var num = 0
-	var next = 1
+	var num float64 = 0
+	var next float64 = 1
 	fibonacci(num, next)
 }
 
-func fibonacci(num int, next int) {
+func fibonacci(num float64, next float64) {
 	fmt.Println(num)
 	var temp = num
 	num = next
