@@ -7,14 +7,22 @@ class Queue {
 	char data[DATA_SIZE];
 public:
 	Queue();
-	~Queue();
 	void put(char item);
-	char get();
+	void get();
 };
 
 int main(int argc, char const *argv[]) {
-	Queue a_queue;
-
+	Queue list;
+	int counter = 1;
+	do {
+		std::cout << "\nHere is the queue so far:\n";
+		list.get();
+		std::cout << "\n";
+		if (counter != 1)
+			getchar();
+		std::cout << "Input the character you want added to the queue: ";
+		list.put(getchar());
+	} while (counter += 1);
 	return 0;
 }
 
@@ -27,20 +35,15 @@ Queue::Queue() {
 
 void Queue::put(char item) {
 	len++;
-
-
+	// shifts the elements over one element
+	for (int i = len - 1; i > 0; --i) {
+		data[i] = data[i - 1];
+	}
 	data[0] = item;
 }
 
-char Queue::get() {
+void Queue::get() {
 	for (int i = 0; i < len; ++i) {
-		cout << data[i];
-	}
-}
-
-// shifts an array over one element, pushing the last element off
-void shift(char data[], int len) {
-	for (int i = len; i > 0; --i) {
-
+		putchar(data[i]);
 	}
 }
