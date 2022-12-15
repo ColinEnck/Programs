@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <Windows.h>
 
 typedef struct node {
 	char value;
