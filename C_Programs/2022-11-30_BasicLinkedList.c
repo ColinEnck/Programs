@@ -67,7 +67,6 @@ void delete(node_t* head) {
 	while (current->child->child != NULL)
 		current = current->child;
 
-	char lastVal = current->child->value;
 	free(current->child);
 	current->child = NULL;
 }
